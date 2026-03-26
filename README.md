@@ -1,19 +1,24 @@
-# AI Market Video Engine (MVP)
+# AI Market Video Engine (Pro Version)
 
-A 100% free, automated engine built in 2 hours to generate visually rich, voiceover-enabled financial market update videos (60-90 seconds) from real-time data and news.
+A 100% free, automated engine built to generate visually rich, voiceover-enabled financial market update videos (60-90 seconds) using cutting-edge AI curation.
 
 ## 🚀 Features
-- **Zero Human Editing Required**: Fully automated news-to-video pipeline.
-- **High-Performance FFmpeg Engine**: Browser-free rendering for maximum stability.
-- **Sleek Visuals**: Vertical (1080x1920) format with glassmorphism dashboard.
-- **Dynamic Content**: Fetches latest news via Google News RSS and generates AI speech with `google-tts-api`.
-- **Text Wrapping & Cleaning**: Logic to clean news metadata and wrap long headlines for professional layout.
+- **AI-Hybrid Generation**: Uses **Google Gemini 1.5/2.0** for smart news narration and sentiment analysis (supports optional API keys).
+- **Smart Failover**: If the AI key is missing or fails, the engine automatically falls back to a robust keyword-based sentiment logic.
+- **Premium Visuals**: 
+    - Vertical (1080x1920) "Shorts" format.
+    - Animated, blurred color-gradient backgrounds.
+    - Glassmorphism UI dashboard.
+    - Anti-overflow text wrapping (max 3 lines per slide).
+- **Sentiment badges**: Automatically color-codes stories as **BULLISH** (Green), **BEARISH** (Red), or **NEUTRAL** (White).
+- **Zero Human Editing**: One click to fetch, clean, narrate, and render.
 
 ## 🛠️ Technology Stack
-- **Next.js 15 / React 19**: Modern web frontend.
-- **FFmpeg-static**: Programmatic video rendering.
-- **Google News RSS**: Real-time news scraping.
-- **Google TTS**: Realistic voiceover audio.
+- **Google Gemini SDK**: AI news curation & sentiment analysis.
+- **Next.js 15 / React 19**: Modern dashboard with glassmorphism aesthetics.
+- **FFmpeg-static**: High-performance backend video rendering.
+- **Google News RSS**: Real-time market data.
+- **Google TTS**: Realistic AI-generated voiceovers.
 
 ## 🔧 Installation
 
@@ -32,26 +37,20 @@ A 100% free, automated engine built in 2 hours to generate visually rich, voiceo
 
 ## 🎥 How to Use
 
-1. **Open the Dashboard**:
-   Go to [http://localhost:3000](http://localhost:3000) in your web browser.
-   
-2. **Choose Your Topic**:
-   - **Method A**: Click the big blue **"1-Click Gen: Latest Market News"** button for a general financial wrap.
-   - **Method B**: Type a custom topic (e.g., "Apple Results", "Crypto Crash", "Gold Prices") into the search bar and hit **Generate**.
-
-3. **Rendering Phase**:
-   - The app will fetch the latest 8-10 headlines, clean them, and generate the TTS audio.
-   - FFmpeg will then stitch the video in the background (takes about 30-45 seconds).
-
-4. **Watch & Download**:
-   - Once finished, a **vertical video player** will automatically appear.
-   - You can play the video directly or right-click to download the `.mp4` file from your `public/` folder.
+1. **Open Dashboard**: Go to [http://localhost:3000](http://localhost:3000).
+2. **AI Boost (Optional)**: Paste your **Google Gemini API Key** into the text field at the top. This allows the AI to rewrite headlines into a professional news script.
+3. **Select Topic**:
+   - Use the blue **"1-Click Gen"** button for the latest general market news.
+   - Or type a specific topic (e.g., "Tata Power", "Nvidia Earnings") into the search box.
+4. **Render & Watch**:
+   - The engine will fetch 8-10 headlines, clean metadata, and start rendering.
+   - After ~45 seconds, a vertical video player will automatically appear with the final result!
 
 ## 📁 Project Structure
-- `/src/app/api/generate`: The heart of the engine—handles the data/audio/video logic.
-- `/src/app/page.js`: The glassmorphism web dashboard.
-- `/public`: Where your final generated MP4 videos are saved.
-- `/tmp_video`: Temporary scratch space for audio synthesis files.
+- `/src/app/api/generate`: The engine logic (RSS -> Gemini -> TTS -> FFmpeg).
+- `/src/app/page.js`: Dashboard UI with LocalStorage API key persistence.
+- `/public`: Final `.mp4` video output folder.
+- `/tmp_video`: Scratchpad for audio synthesis.
 
 ## 📝 License
 MIT

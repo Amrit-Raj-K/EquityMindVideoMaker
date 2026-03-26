@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@remotion/cli": "^4.0.440",
     "@remotion/player": "^4.0.440",
     "canvas": "^3.2.2",
