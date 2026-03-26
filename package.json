@@ -1,0 +1,22 @@
+{
+  "name": "ai-market-video-engine",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.120",
+    "@remotion/cli": "^4.0.120",
+    "@remotion/player": "^4.0.120",
+    "rss-parser": "^3.13.0",
+    "google-tts-api": "^2.0.2",
+    "lucide-react": "^0.400.0"
+  }
+}
